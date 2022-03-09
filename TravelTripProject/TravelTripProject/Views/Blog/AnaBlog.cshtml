@@ -1,0 +1,92 @@
+﻿@using TravelTripProject.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "AnaBlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/BlogName/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/BlogName/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Erkan Bostan, Travel Trip" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/BlogName/js/move-top.js"></script>
+    <script type="text/javascript" src="~/BlogName/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+
+
+                @foreach (var i in Model)
+                {
+                    <div class="single-grid">
+                        <img src="~/@i.BlogResim" alt="" />
+                        <p>
+                            <a href="~/Blog/BlogDetail/@i.ID">@i.Baslik</a> @Convert.ToDateTime(i.Tarih).ToString("dd/MMM/yyy")
+                        </p>
+                        <p>@i.Aciklama.Substring(0, 9)..</p>
+                    </div>
+                }
+            </div>
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>RECENT POSTS</h3>
+                    <ul>
+                        <li><a href="#">Aliquam tincidunt mauris</a></li>
+                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                        <li><a href="#">Nunc dignissim risus consecu</a></li>
+                        <li><a href="#">Cras ornare tristiqu</a></li>
+                    </ul>
+                </div>
+                <div class="comments">
+                    <h3>RECENT COMMENTS</h3>
+                    <ul>
+                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <div class="archives">
+                    <h3>ARCHIVES</h3>
+                    <ul>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                        <li><a href="#">July 2013</a></li>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <h3>CATEGORIES</h3>
+                    <ul>
+                        <li><a href="#">Vivamus vestibulum nulla</a></li>
+                        <li><a href="#">Integer vitae libero ac risus e</a></li>
+                        <li><a href="#">Vestibulum commo</a></li>
+                        <li><a href="#">Cras iaculis ultricies</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>
+

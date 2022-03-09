@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Travel Trip </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/EasyTrip/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/EasyTrip/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/EasyTrip/js/jquery.min.js"></script>
+    <script src="~/EasyTrip/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="~/Ana/AnaSayfa"><img src="~/EasyTrip/images/logo.png" alt="" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/EasyTrip/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Bize Ulaşın : +90 536-321-7219</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="~/Ana/AnaSayfa">Ana Sayfa</a></li>
+                <li><a class="hsubs" href="~/About/AnaAbout">Hakkımızda</a></li>
+                <li><a class="hsubs" href="~/Blog/AnaBlog">Blogum</a></li>
+                <li><a href="~/Iletisim/AnaIletisim">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class"content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2022 Travel-Trip. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/erkan-bostan-11257a210/">Erkan Bostan</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

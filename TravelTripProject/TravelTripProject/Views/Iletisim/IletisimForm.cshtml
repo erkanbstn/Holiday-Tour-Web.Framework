@@ -1,0 +1,17 @@
+﻿@model TravelTripProject.Models.Siniflar.Iletisim
+
+@using (Html.BeginForm("SendMessage", "Iletisim", FormMethod.Post))
+{
+    <label>İsim</label>
+    @Html.TextBoxFor(b => b.Isim, new { @class = "form-control" })
+    <label>Mail</label>
+
+    @Html.TextBoxFor(b => b.Mail, new { @class = "form-control" })
+    <label>Konu</label>
+
+    @Html.TextBoxFor(b => b.Konu, new { @class = "form-control" })
+    <label>Mesaj</label>
+
+    @Html.TextBoxFor(b => b.Mesaj, new { @class = "form-control" })
+    <button class="btn btn-primary">Mesaj Gönder</button>
+}

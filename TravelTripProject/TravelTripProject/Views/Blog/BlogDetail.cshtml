@@ -1,0 +1,71 @@
+﻿@model TravelTripProject.Models.Siniflar.Listele
+@{
+    ViewBag.Title = "BlogDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/BlogName/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/BlogName/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Erkan Bostan, Travel Trip" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/BlogName/js/move-top.js"></script>
+    <script type="text/javascript" src="~/BlogName/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            @foreach (var i in Model.BlogDeger)
+            {
+                <div class="single-grid">
+                    <img src="~/@i.BlogResim" alt="" />
+                    <p>
+                        <a href="~/Blog/BlogDetail/@i.ID">@i.Baslik</a> @Convert.ToDateTime(i.Tarih).ToString("dd/MMM/yyy")
+                    </p>
+                    <p>@i.Aciklama</p>
+                </div>
+            }
+            @foreach (var i in Model.YorumDeger)
+            {
+                <ul class="comment-list">
+                    <h5 class="post-author_head">Yazan<a href="#" title="Posts by admin" rel="author"> @i.Kullanici</a></h5>
+                    <li>
+                        <img src="~/BlogName/images/Person.jpg" class="img-responsive" alt="">
+                        <div class="desc">
+                            <p>@i.Yorumlar</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>
+            }
+        <div class="content-form">
+            <h3>Bir Yorum Bırak</h3>
+            <form method="post" action="~/Blog/BlogDetail">
+                <input type="text" placeholder="Blog ID" name="BlogID" value="@ViewBag.dg"  required />
+                <input type="text" placeholder="Kullanıcı" name="Kullanici" required />
+                <input type="text" placeholder="Mail" name="Mail" required />
+                <textarea placeholder="Yorumlar" name="Yorumlar"></textarea>
+                <input type="submit" value="Gönder" />
+            </form>
+        </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

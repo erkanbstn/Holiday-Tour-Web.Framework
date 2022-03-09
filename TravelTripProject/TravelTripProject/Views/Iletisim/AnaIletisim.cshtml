@@ -1,0 +1,44 @@
+﻿@using TravelTripProject.Models.Siniflar
+@model List<Adres>
+@{
+    ViewBag.Title = "AnaIletisim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="contact">
+        <div class="wrap">
+            <div class="contact-top">
+                <h3>İletişim Bilgileri</h3>
+                <p>Tatil ve Seyahat Yorum ve Blog Siteme Hoşgeldiniz. Bu Bölümden Bana Bilgilerinizi ve Mesajınızı Girerek Ulaşabilirsiniz.</p>
+            </div>
+            <div class="form">
+                @Html.Action("IletisimForm","Iletisim")
+            </div>
+            <div class="clear"></div>
+            <div class="contact-bottom">
+                <div class="contact-left">
+                    <div class="contact-add">
+                        @foreach (var i in Model)
+                        {
+                            <h3>@i.Baslik</h3>
+                            <p>@i.Aciklama</p>
+                            <p>Açık Adres : @i.AcikAdres</p>
+                            <p>Telephone: @i.Telefon</p>
+                            <p>Email:<a href="mailto:erkanbstn27@gmail.com">@i.Mail</a></p>
+                        }
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe width="580" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Rashelle+Way,+San+Ramon,+CA,+United+States&amp;aq=0&amp;oq=rash&amp;sll=44.308127,-111.75293&amp;sspn=22.280521,53.569336&amp;ie=UTF8&amp;hq=&amp;hnear=Rashelle+Way,+San+Ramon,+Contra+Costa,+California+94582,+United+States&amp;ll=37.768294,-121.922369&amp;spn=0.001503,0.00327&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Rashelle+Way,+San+Ramon,+CA,+United+States&amp;aq=0&amp;oq=rash&amp;sll=44.308127,-111.75293&amp;sspn=22.280521,53.569336&amp;ie=UTF8&amp;hq=&amp;hnear=Rashelle+Way,+San+Ramon,+Contra+Costa,+California+94582,+United+States&amp;ll=37.768294,-121.922369&amp;spn=0.001503,0.00327&amp;t=m&amp;z=14&amp;iwloc=A" style="color: #555;text-align:left">Adres İçin Harita</a></small>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <di class="clear"></di>
+        </div>
+    </div>
+</body>
+</html>
+
+
